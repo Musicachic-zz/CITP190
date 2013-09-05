@@ -14,7 +14,7 @@
 *
 *
 */
-package citp190;
+package HelloWorld;
 
 
 public class HelloWorld {
