@@ -17,27 +17,21 @@
 
 package CoinCalculation;
 
-import java.lang.Math;
-import java.math.BigDecimal;
 import java.util.Scanner;
-import java.text.NumberFormat;
 
-public class CoinCalculation
-{
-    public static void main(String[] args)
-    {
+public class CoinCalculation {
+    public static void main(String[] args) {
 
         final int QUARTERS = 25;
         final int DIMES = 10;
         final int NICKELS = 5;
-        final int PENNIES = 1;
-        int remainderAfterQuarters;
-        int remainderAfterDimes;
-        int remainderAfterNickels
+        int totalQuarters = 0;
+        int totalDimes = 0;
+        int totalNickels = 0;
+        int totalPennies = 0;
 
         String choice = "y";
-        while (choice.equalsIgnoreCase("y"))
-        {
+        while (choice.equalsIgnoreCase("y")) {
 
             //Welcome statement to the user.
             System.out.println("Welcome to the Change Calculator");
@@ -49,23 +43,39 @@ public class CoinCalculation
             int cents = sc.nextInt();
 
             //Calculate the results.
-            if (cents >= 25)
-            {
-                int totalQuarters = cents/QUARTERS;
-                remainderAfterQuarters = cents%QUARTERS;
+            if (cents >= 25) {
+                totalQuarters = cents / QUARTERS;
+                cents = cents % QUARTERS;
             }
-            if (remainderAfterQuarters >= 10 )
-            {
-                int totalDimes = remainderAfterQuarters/DIMES;
-                remainderAfterDimes = cents%DIMES;
+            if (cents > 10) {
+                totalDimes = cents / DIMES;
+                cents = cents % DIMES;
             }
-            if (remainderAfterDimes >=5)
-            {
-                int totalNickels = remainderAfterDimes/NICKELS;
-                remainderAfterNickels = cents%NICKELS;
+            if (cents > 5) {
+                totalNickels = cents / NICKELS;
+                cents = cents % NICKELS;
             }
+            if (cents > 1) {
+                totalPennies = cents;
+
+            }
+
+            //Format and display the results.
+            String message =
+                    "Quarters: " + totalQuarters + "\n"
+                            + "Dimes: " + totalDimes + "\n"
+                            + "Nickels: " + totalNickels + "\n"
+                            + "Pennies: " + totalPennies;
+            System.out.println(message);
+
+            //See if the user wants to continue.
+            System.out.print("Continue? (y/n) : ");
+            choice = sc.next();
+            System.out.println();
+
 
         }
 
     }
 }
+
