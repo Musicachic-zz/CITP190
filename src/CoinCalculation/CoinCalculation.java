@@ -25,13 +25,14 @@ public class CoinCalculation {
         final int QUARTERS = 25;
         final int DIMES = 10;
         final int NICKELS = 5;
-        int totalQuarters = 0;
-        int totalDimes = 0;
-        int totalNickels = 0;
-        int totalPennies = 0;
 
         String choice = "y";
         while (choice.equalsIgnoreCase("y")) {
+
+            int totalQuarters = 0;
+            int totalDimes = 0;
+            int totalNickels = 0;
+            int totalPennies = 0;
 
             //Welcome statement to the user.
             System.out.println("Welcome to the Change Calculator");
@@ -47,15 +48,15 @@ public class CoinCalculation {
                 totalQuarters = cents / QUARTERS;
                 cents = cents % QUARTERS;
             }
-            if (cents > 10) {
+            if (cents >= 10) {
                 totalDimes = cents / DIMES;
                 cents = cents % DIMES;
             }
-            if (cents > 5) {
+            if (cents >= 5) {
                 totalNickels = cents / NICKELS;
                 cents = cents % NICKELS;
             }
-            if (cents > 1) {
+            if (cents >= 1) {
                 totalPennies = cents;
 
             }
@@ -72,10 +73,7 @@ public class CoinCalculation {
             System.out.print("Continue? (y/n) : ");
             choice = sc.next();
             System.out.println();
-
-
         }
-
     }
 }
 
