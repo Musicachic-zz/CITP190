@@ -25,40 +25,39 @@ public class GreatestCommonDenominator {
         String choice = "y";
         while (choice.equalsIgnoreCase("y")) {
 
-            int greatComDom = 0;
-            int newNumber = 0;
+                //Welcome statement to the user.
+                System.out.println("Greatest Common Divisor Finder");
+                System.out.println();
 
-            //Welcome statement to the user.
-            System.out.println("Greatest Common Divisor Finder");
-            System.out.println();
+                //Have the user enter the first number.
+                Scanner sc = new Scanner(System.in);
+                System.out.print("Enter first number: ");
+                int x = sc.nextInt();
 
-            //Have the user enter the first number.
-            Scanner sc = new Scanner(System.in);
-            System.out.print("Enter first number: ");
-            int firstNumber = sc.nextInt();
+                //Have the user enter the second number.
+                System.out.print("Enter second number: ");
+                int y = sc.nextInt();
 
-            //Have the user enter the second number.
-            System.out.print("Enter second number: ");
-            int secondNumber = sc.nextInt();
+                    while(y > 0 ) {
 
-            if (firstNumber == secondNumber){
-                greatComDom = firstNumber;
-                break;
+                        if (x > y){
+
+                            int temp = x;
+                            x = y;
+                            y = temp;
+                }
+                        else
+                            y = y - x;
             }
-            if (firstNumber > secondNumber){
-                firstNumber-secondNumber = newNumber;
 
-                if (newNumber)
-            }
 
-             String message = "Greatest common divisor : " + greatComDom;
-             System.out.println(message);
+                 String message = "Greatest common divisor : " + x;
+                 System.out.println(message);
 
-             //See if the user wants to continue.
-             System.out.print("Continue? (y/n) : ");
-             choice = sc.next();
-             System.out.println();
+                 //See if the user wants to continue.
+                 System.out.print("Continue? (y/n) : ");
+                 choice = sc.next();
+                 System.out.println();
             }
     }
-}
 }
