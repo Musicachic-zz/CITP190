@@ -26,8 +26,8 @@ public class NumberGame
     public static void main (String[] args)
     {
 
-        int min = 1;
-        int max = 100;
+        int MIN = 1;
+        int MAX = 101;
         int ACCUMULATOR = 0;
         String choice = "y";
         while (choice.equalsIgnoreCase("y")) {
@@ -43,8 +43,9 @@ public class NumberGame
 
             //Generate the computer's random guess.
             double computerGuess = Math.random();
-            double cg = (computerGuess * 100) + 1;
-            System.out.println((int) cg);
+            double comGuess = ((computerGuess * 100) + 1)%100;
+            int cg = (int) comGuess;
+            System.out.println(cg);
 
             //Have the user enter guesses.
             Scanner sc = new Scanner(System.in);
@@ -52,8 +53,10 @@ public class NumberGame
             int y = sc.nextInt();
 
             while (y != cg)
-            {
 
+            {
+                y = getIntWithinRange(sc, y, MIN, MAX);
+                y = getInt(sc, y);
                 if (y > cg + 10)
                 {
                     System.out.println("Way too high! Guess again.");
@@ -69,54 +72,68 @@ public class NumberGame
 
                 ACCUMULATOR += 1;
 
-            }
-            while (y == cg) {
-                if (ACCUMULATOR <= 3)
-                {
-                    System.out.println("Great work! You are a mathematical wizard.");
-                }
-                else if (ACCUMULATOR > 7)
-                {
-                    System.out.println("What took you so long? Maybe you should take some lessons.");
-                }
-                else
-                    System.out.println("Not too bad! You've got some potential.");
-            }
+                y = sc.nextInt();
 
+            }
+        if (ACCUMULATOR <= 3)
+        {
+            System.out.println("Great work! You are a mathematical wizard.");
         }
+        else if (ACCUMULATOR > 7)
+        {
+            System.out.println("What took you so long? Maybe you should take some lessons.");
+        }
+        else
+            System.out.println("Not too bad! You've got some potential.");
+
+            System.out.println("Would you like to play again? (y/n): ");
+            choice = sc.next();
+        }
+
+        System.out.println();
     }
-    public static int getIntWithinRange (Scanner sc, String prompt, int min, int max){
-        int i = 0;
+    public static int getIntWithinRange (Scanner sc, int y, int min, int max){
         boolean isValid = false;
-        while (!isValid){
-            i = getInt(sc, prompt);
-            if (i , min)
+        while (!isValid)
+        {
+            if (y < min)
+            {
                 System.out.println(
                         "Error! Number must be greater than " + min + ".");
-            else if (i >= max)
+                System.out.println("Enter another number: ");
+                y = sc.nextInt();
+            }
+            else if (y >= max)
+            {
                 System.out.println(
-                        "Error! Number must be greater than " + max + ".");
+                        "Error! Number must be less than " + max + ".");
+                System.out.println("Enter another number: ");
+                y = sc.nextInt();
+            }
             else isValid = true;
-    }
-        return i;
+
+
+        }
+        return y;
     }
 
-    public static int getInt(Scanner sc, String prompt){
-        int i = 0;
+    public static int getInt(Scanner sc, int y){
         boolean isValid = false;
-        while (!isValid){
-            System.out.print(prompt);
-            if (sc.hasNextInt()){
-                i = sc.nextInt();
+        while (!isValid)
+        {
+            if (y == sc.nextInt())
+            {
+//              y = sc.nextInt();
                 isValid = true;
-        }
-            else {
+            }
+            else
+            {
                 System.out.println(
                         "Error! Invalid integer value. Try again.");
             }
-            sc.nextLine();
-            }
-        return i;
+            y = sc.nextInt();
+        }
+        return y;
     }
 
 }
