@@ -70,20 +70,32 @@ public class NumberGame
                 ACCUMULATOR += 1;
 
             }
+            while (y == cg) {
+                if (ACCUMULATOR <= 3)
+                {
+                    System.out.println("Great work! You are a mathematical wizard.");
+                }
+                else if (ACCUMULATOR > 7)
+                {
+                    System.out.println("What took you so long? Maybe you should take some lessons.");
+                }
+                else
+                    System.out.println("Not too bad! You've got some potential.");
+            }
 
         }
     }
     public static int getIntWithinRange (Scanner sc, String prompt, int min, int max){
         int i = 0;
         boolean isValid = false;
-        while (isValid == false){
+        while (!isValid){
             i = getInt(sc, prompt);
             if (i , min)
                 System.out.println(
                         "Error! Number must be greater than " + min + ".");
             else if (i >= max)
                 System.out.println(
-                        "Error! Number must be greaer than " + max + ".");
+                        "Error! Number must be greater than " + max + ".");
             else isValid = true;
     }
         return i;
@@ -92,7 +104,7 @@ public class NumberGame
     public static int getInt(Scanner sc, String prompt){
         int i = 0;
         boolean isValid = false;
-        while (isValid == false){
+        while (!isValid){
             System.out.print(prompt);
             if (sc.hasNextInt()){
                 i = sc.nextInt();
