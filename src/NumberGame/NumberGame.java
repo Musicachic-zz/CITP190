@@ -91,6 +91,7 @@ public class NumberGame
         }
 
         System.out.println();
+        System.out.println("Thanks for playing!");
     }
     public static int getIntWithinRange (Scanner sc, int y, int min, int max){
         boolean isValid = false;
@@ -118,12 +119,13 @@ public class NumberGame
     }
 
     public static int getInt(Scanner sc, int y){
+        y = sc.nextInt();
         boolean isValid = false;
         while (!isValid)
         {
-            if (y == sc.nextInt())
+            if (sc.hasNextInt())
             {
-//              y = sc.nextInt();
+//                y = sc.nextInt();
                 isValid = true;
             }
             else
