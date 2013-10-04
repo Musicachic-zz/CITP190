@@ -56,8 +56,9 @@ public class NumberGame
             while (y != cg)
 
             {
-                y = getIntWithinRange(sc, y, MIN, MAX);
                 y = getInt(sc, y);
+                y = getIntWithinRange(sc, y, MIN, MAX);
+
                 if (y > cg + 10)
                 {
                     System.out.println("Way too high! Guess again.");
@@ -122,24 +123,24 @@ public class NumberGame
     }
 
     public static int getInt(Scanner sc, int y){
-        y = sc.nextInt();
+        y = 0;
         boolean isValid = false;
         while (!isValid)
         {
-            try
+            if (sc.hasNextInt())
             {
                 y = sc.nextInt();
                 isValid = true;
-
             }
-            catch (InputMismatchException e)
+            else
             {
-                sc.nextInt();
+                sc.nextLine();
                 System.out.println(
                         "Error! Invalid integer value. Try again.");
-                continue;
+                y = sc.nextInt();
             }
-            y = sc.nextInt();
+
+
         }
         return y;
     }
