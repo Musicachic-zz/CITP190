@@ -44,7 +44,7 @@ public class NumberGame
 
             //Generate the computer's random guess.
             int cg = 1 + (int) (Math.random() * 100);
-            System.out.println(cg);
+            //System.out.println(cg); Used for testing only.
 
             //Have the user enter guesses.
             Scanner sc = new Scanner(System.in);
