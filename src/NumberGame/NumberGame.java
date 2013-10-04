@@ -21,8 +21,8 @@ import java.util.Scanner;
 
 public class NumberGame
 {
-    static final int MIN = 1;
-    static final int MAX = 101;
+    static final int MIN = 0;
+    static final int MAX = 100;
 
 
     public static void main (String[] args)
@@ -95,14 +95,14 @@ public class NumberGame
 
     public static boolean validateWithinRange(int y)
     {
-        if (y < MIN)
+        if (y <= MIN)
         {
             System.out.println("Error! Number must be greater than " + MIN + ".");
             return false;
         }
         else if (y >= MAX)
         {
-            System.out.println("Error! Number must be less than " + MAX + ".");
+            System.out.println("Error! Number must be less than or equal to " + MAX + ".");
             return false;
         }
         return true;
