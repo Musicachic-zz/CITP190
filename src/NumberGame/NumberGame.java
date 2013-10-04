@@ -125,8 +125,9 @@ public class NumberGame
         {
             if (sc.hasNextInt())
             {
-//                y = sc.nextInt();
+                y = sc.nextInt();
                 isValid = true;
+
             }
             else
             {
