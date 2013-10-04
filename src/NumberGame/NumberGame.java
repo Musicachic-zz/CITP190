@@ -17,6 +17,7 @@
 
 package NumberGame;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.Random;
 import java.text.*;
@@ -87,6 +88,8 @@ public class NumberGame
             System.out.println("Not too bad! You've got some potential.");
 
             System.out.println("Would you like to play again? (y/n): ");
+
+
             choice = sc.next();
         }
 
@@ -119,20 +122,22 @@ public class NumberGame
     }
 
     public static int getInt(Scanner sc, int y){
-//        y = sc.nextInt();
+        y = sc.nextInt();
         boolean isValid = false;
         while (!isValid)
         {
-            if (sc.hasNextInt())
+            try
             {
                 y = sc.nextInt();
                 isValid = true;
 
             }
-            else
+            catch (InputMismatchException e)
             {
+                sc.nextInt();
                 System.out.println(
                         "Error! Invalid integer value. Try again.");
+                continue;
             }
             y = sc.nextInt();
         }
