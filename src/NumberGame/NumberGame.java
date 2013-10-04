@@ -119,7 +119,7 @@ public class NumberGame
     }
 
     public static int getInt(Scanner sc, int y){
-        y = sc.nextInt();
+//        y = sc.nextInt();
         boolean isValid = false;
         while (!isValid)
         {
