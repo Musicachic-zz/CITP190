@@ -1,7 +1,7 @@
 /*            *             ====================================================
 *            ***            # Name: Teresa Potts
 *          *******          # Course Name: CITP 190
-*           *****           # Java Source File: CoinCalculation.java
+*           *****           # Java Source File: NumberGame.java
 *            ***            # Project Name: Workbook Assignment 5-3
 *             *             # Description: Here is my number game program.
 *                           ====================================================
