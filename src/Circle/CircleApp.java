@@ -1,11 +1,11 @@
 
-/*            *             ====================================================
+/*            *             =================================================================
 *            ***            # Name: Teresa Potts
 *          *******          # Course Name: CITP 190
-*           *****           # Java Source File: Circleapp.java
+*           *****           # Java Source File: Circleapp.java, Circle.java, Validator.java
 *            ***            # Project Name: Workbook Assignment 7-2
 *             *             # Description: Here is my circle app program.
-*                           ====================================================
+*                           ==================================================================
 *      *              *
 *     ***            ***
 *   *******        *******
@@ -39,7 +39,7 @@ public class CircleApp
         {
             //Get radius from the user.
             double myRadius = Validator.getDoubleWithinRange(sc, "Enter radius: ", 0, 100);
-
+            //Create the circle object.
             Circle myCircle = new Circle(myRadius);
 
             //Display message to the user.
