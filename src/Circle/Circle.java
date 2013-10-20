@@ -1,6 +1,7 @@
 package Circle;
 
 import java.lang.Math;
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
 public class Circle
@@ -25,6 +26,8 @@ public class Circle
     public String getFormattedCircumference()
     {
         NumberFormat Circumference = NumberFormat.getNumberInstance();
+        DecimalFormat df = (DecimalFormat)Circumference;
+        df.applyPattern("###,###.00");
         return Circumference.format(this.getCircumference());
 
     }
@@ -39,6 +42,8 @@ public class Circle
     public String getFormattedArea()
     {
         NumberFormat Area = NumberFormat.getNumberInstance();
+        DecimalFormat df = (DecimalFormat)Area;
+        df.applyPattern("###,###.00");
         return Area.format(this.getArea());
     }
 
