@@ -1,11 +1,14 @@
 package ConsoleTester;
 
 
+import java.util.Scanner;
+
 public class ConsoleTestApp extends IOFactory
 {
     public static void main (String args[])
     {
         ConsoleIO console = IOFactory.getConsoleIO();
+        Scanner sc = new Scanner(System.in);
 
         console.println("Welcome to the Console Tester application");
         console.println();
@@ -19,12 +22,12 @@ public class ConsoleTestApp extends IOFactory
         console.println();
 
         console.println("Required String Test");
-        console.getRequiredString("Enter your email address: ");
-        console.println();
 
-//        console.println("String Choice Test");
-//        console.getChoiceString("Select one (x/y): ", "x", "y");
-//        console.println();
+        console.println(console.getRequiredString("Enter your email address: "));
+
+        console.println("String Choice Test");
+        console.getChoiceString("Select one (x/y): ", "x", "y");
+        console.println();
 
     }
 }

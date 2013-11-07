@@ -111,7 +111,6 @@ public class MyConsole implements ConsoleIO
             else
             {
                 isValid = true;
-                MyConsole.sc.nextLine();
 
             }
 
@@ -125,15 +124,16 @@ public class MyConsole implements ConsoleIO
     {
         String s = " ";
         boolean isValid = false;
-
+        s = getRequiredString(prompt);
         while (!isValid)
         {
-            s = getRequiredString(prompt);
+
             if (s.equalsIgnoreCase(s1)|| s.equalsIgnoreCase(s2))
                 isValid = true;
 
             else
                 System.out.println("Please enter x or y.");
+                MyConsole.sc.nextLine();
         }
         return s;
     }
