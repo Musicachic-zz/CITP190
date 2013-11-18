@@ -1,16 +1,14 @@
 package ConsoleTester;
 
 
-import java.util.Scanner;
-
 public interface ConsoleInput
 {
     // Use this for int values
-    int getInt(Scanner sc, String prompt);
+    int getInt(String prompt);
     int getIntWithinRange(String prompt, int min, int max);
 
     // Use this for double values
-    double getDouble(Scanner sc, String prompt);
+    double getDouble(String prompt);
     double getDoubleWithinRange(String prompt, double min, double max);
 
     // Use this for strings

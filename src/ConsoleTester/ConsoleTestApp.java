@@ -3,7 +3,7 @@ package ConsoleTester;
 
 import java.util.Scanner;
 
-public class ConsoleTestApp extends IOFactory
+public class ConsoleTestApp
 {
     public static void main (String args[])
     {
@@ -23,7 +23,7 @@ public class ConsoleTestApp extends IOFactory
 
         console.println("Required String Test");
 
-        console.println(console.getRequiredString("Enter your email address: "));
+        String s = console.getRequiredString("Enter your email address: ");
 
         console.println("String Choice Test");
         console.getChoiceString("Select one (x/y): ", "x", "y");

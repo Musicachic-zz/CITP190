@@ -12,7 +12,7 @@ public class MyConsole implements ConsoleIO
 
 
     @Override
-    public int getInt(Scanner sc,String prompt)
+    public int getInt(String prompt)
     {
         int i = 0;
         boolean isValid = false;
@@ -40,7 +40,7 @@ public class MyConsole implements ConsoleIO
         boolean isValid = false;
         while (!isValid)
         {
-            i = getInt(sc, prompt);
+            i = getInt(prompt);
             if (i <= min)
                 System.out.println(
                         "Error! Number must be greater than " + min);
@@ -54,7 +54,7 @@ public class MyConsole implements ConsoleIO
     }
 
     @Override
-    public double getDouble(Scanner sc, String prompt)
+    public double getDouble(String prompt)
     {
         double d = 0;
         boolean isValid = false;
@@ -82,7 +82,7 @@ public class MyConsole implements ConsoleIO
         boolean isValid = false;
         while (!isValid)
         {
-            d = getDouble(sc, prompt);
+            d = getDouble(prompt);
             if (d <= min)
                 System.out.println(
                         "Error! Number must be greater than " + min);
@@ -122,7 +122,7 @@ public class MyConsole implements ConsoleIO
     @Override
     public String getChoiceString(String prompt, String s1, String s2)
     {
-        String s = " ";
+        String s = "";
         boolean isValid = false;
         s = getRequiredString(prompt);
         while (!isValid)
