@@ -70,10 +70,4 @@ public class Student implements Comparable
         else
             return (this.getFirstName().compareTo(s.getFirstName()));
     }
-
-    public String toString(Object o){
-       Student s = (Student) o;
-
-        return this.lastName + this.firstName +":" + this.score;
-    }
 }

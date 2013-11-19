@@ -27,16 +27,20 @@ public class StudentScoreApp
             int score = Validator.getIntWithinRange(sc, "Enter score: ", 0,100);
 
             Student s = new Student(lastName, firstName, score);
+            arrayStudents[i] = s;
         }
 
         Arrays.sort(arrayStudents);
-        //System.out.println(Arrays.toString(arrayStudents));
 
 
-/*        for (int i=0; i < arrayStudents.length; i++){
+
+        for (int i=0; i < arrayStudents.length; i++){
                 {
-                    System.out.println(arrayStudents);
-                }*/
+                    System.out.println(arrayStudents[i].getLastName());
+                    System.out.println(arrayStudents[i].getFirstName());
+                    System.out.println(arrayStudents[i].getScore());
+                }
         }
     }
+}
 
