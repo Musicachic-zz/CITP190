@@ -34,12 +34,13 @@ public class StudentScoreApp
 
 
 
-        for (int i=0; i < arrayStudents.length; i++){
-                {
-                    System.out.println(arrayStudents[i].getLastName());
-                    System.out.println(arrayStudents[i].getFirstName());
-                    System.out.println(arrayStudents[i].getScore());
-                }
+        /*                    System.out.println(arrayStudents[i].getFirstName());
+                            System.out.println(arrayStudents[i].getScore());*/
+        for (int i=0; i < arrayStudents.length; i++)
+        {
+            System.out.println(arrayStudents[i].getLastName()+ ", " +
+                    arrayStudents[i].getFirstName()
+                            + ": "+ arrayStudents[i].getScore());
         }
     }
 }
