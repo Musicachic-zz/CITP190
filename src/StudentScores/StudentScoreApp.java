@@ -1,7 +1,22 @@
+/*            *             ====================================================                                                                                                            ***                      ====================================================
+*            ***            # Name: Teresa Potts
+*          *******          # Course Name: CITP 190
+*           *****           # Java Source File: Student.java
+*            ***            # Project Name: Workbook Assignment 11-2
+*             *             # Description: Here is my Student Scores program.
+*                           ====================================================
+*      *              *
+*     ***            ***
+*   *******        *******
+*    *****          *****
+*     ***            ***
+*      *              *
+*
+*
+*/
+
 package StudentScores;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Arrays;
 
@@ -32,10 +47,6 @@ public class StudentScoreApp
 
         Arrays.sort(arrayStudents);
 
-
-
-        /*                    System.out.println(arrayStudents[i].getFirstName());
-                            System.out.println(arrayStudents[i].getScore());*/
         for (int i=0; i < arrayStudents.length; i++)
         {
             System.out.println(arrayStudents[i].getLastName()+ ", " +
