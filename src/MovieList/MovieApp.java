@@ -44,7 +44,24 @@ public class MovieApp {
 
             String personMovieCategory = Validator.getRequiredString(sc, "What category are you interested in?");
 
+            for (int i = 0; i < MyListOfMovies.size(); i++){
+                if (personMovieCategory.equalsIgnoreCase("animated"))
+                {
+                    MyListOfMovies.remove();
+                }
+                if (personMovieCategory.equalsIgnoreCase("drama"))
+                {
 
+                }
+                if (personMovieCategory.equalsIgnoreCase("horror"))
+                {
+
+                }
+                if (personMovieCategory.equalsIgnoreCase("scifi"))
+                {
+
+                }
+            }
 
             choice = Validator.getRequiredString(sc, "Continue? (y/n): ");
             System.out.println();
@@ -63,5 +80,6 @@ public class MovieApp {
             CreatingArrayList.add(m);
         }
         return CreatingArrayList;
+
     }
 }
