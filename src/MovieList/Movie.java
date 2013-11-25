@@ -53,11 +53,11 @@ public class Movie implements Comparable
     public int compareTo(Object o)
     {
         Movie m = (Movie) o;
-        int genreCompare = this.getGenre().compareTo(m.getGenre());
-        if (genreCompare != 0)
-            return genreCompare;
+        int titleCompare = this.getTitle().compareTo(m.getTitle());
+        if (titleCompare != 0)
+            return titleCompare;
         else
-            return(this.getGenre().compareToIgnoreCase(m.getGenre()));
+            return(this.getTitle().compareToIgnoreCase(m.getTitle()));
     }
 }
 

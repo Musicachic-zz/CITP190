@@ -17,8 +17,7 @@
 
 package MovieList;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class MovieApp {
 
@@ -32,9 +31,9 @@ public class MovieApp {
 
         String choice = "y";
 
-        ArrayList<Movie> MyListOfMovies = CreateArrayList();
+        ArrayList<Movie> myListOfMovies = createArrayList();
 
-        System.out.println(MyListOfMovies.size());
+        System.out.println(myListOfMovies.size());
 
 
         while (choice.equalsIgnoreCase("y"))
@@ -42,25 +41,18 @@ public class MovieApp {
             System.out.println("There are four categories: animated, drama, horror, and scifi");
             System.out.println();
 
-            String personMovieCategory = Validator.getRequiredString(sc, "What category are you interested in?");
+            String personMovieCategory = Validator.getRequiredString(sc, "What category are you interested in? ");
 
-            for (int i = 0; i < MyListOfMovies.size(); i++){
-                if (personMovieCategory.equalsIgnoreCase("animated"))
+            Collection<Movie> matchedMovies = new TreeSet<>();
+            for(Movie movie : myListOfMovies) {
+                if (personMovieCategory.equalsIgnoreCase(movie.getGenre()))
                 {
-                    MyListOfMovies.remove();
+                    matchedMovies.add(movie);
                 }
-                if (personMovieCategory.equalsIgnoreCase("drama"))
-                {
-
-                }
-                if (personMovieCategory.equalsIgnoreCase("horror"))
-                {
-
-                }
-                if (personMovieCategory.equalsIgnoreCase("scifi"))
-                {
-
-                }
+            }
+            for (Movie movie : matchedMovies)
+            {
+                System.out.println(movie.getTitle());
             }
 
             choice = Validator.getRequiredString(sc, "Continue? (y/n): ");
@@ -69,17 +61,17 @@ public class MovieApp {
         }
     }
 
-    public static ArrayList<Movie> CreateArrayList()
+    public static ArrayList<Movie> createArrayList()
     {
         Movie m;
-        ArrayList<Movie> CreatingArrayList = new ArrayList<>();
+        ArrayList<Movie> creatingArrayList = new ArrayList<>();
         for (int i = 0; i <= 100; i++ )
         {
             m = MovieIO.getMovie(i);
 
-            CreatingArrayList.add(m);
+            creatingArrayList.add(m);
         }
-        return CreatingArrayList;
+        return creatingArrayList;
 
     }
 }
