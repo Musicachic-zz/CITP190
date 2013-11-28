@@ -23,8 +23,6 @@ import java.io.FileInputStream;
 
 public class FileCheckerApp
 {
-    String pathName = null;
-
     public static void main(String args[]) throws FileNotFoundException
     {
 
@@ -48,7 +46,7 @@ public class FileCheckerApp
         {
         try
         {
-            FileInputStream f = new FileInputStream(pathName);
+            new FileInputStream(pathName);
             System.out.println("That file exists.");
         }
         catch (FileNotFoundException e)
