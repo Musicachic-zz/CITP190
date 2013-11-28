@@ -20,10 +20,11 @@ package FileChecker;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.io.FileInputStream;
-import java.io.File;
 
 public class FileCheckerApp
 {
+    String pathName = null;
+
     public static void main(String args[]) throws FileNotFoundException
     {
 
@@ -34,32 +35,27 @@ public class FileCheckerApp
             Scanner sc = new Scanner(System.in);
             System.out.print("Enter a file path and name: ");
             String pathName = sc.next();
-            File f = new File(pathName);
+            FileCheckerApp.doesFileExist(pathName);
 
-            if (f.exists())
-            {
-                System.out.println("That file exists.");
-            }
-
-            else
-            {
-                System.out.println("That file does not exist.");
-            }
-
-/*            try
-            {
-                FileInputStream f = new FileInputStream(pathName);
-                System.out.println("That file exists.");
-            }
-            catch (FileNotFoundException e)
-            {
-                System.out.println("That file does not exist.");
-                return null;
-            }*/
             System.out.println("Check another file? (y/n): ");
             choice = sc.next();
             System.out.println();
 
         }
     }
+
+    public static String doesFileExist (String pathName) throws FileNotFoundException
+        {
+        try
+        {
+            FileInputStream f = new FileInputStream(pathName);
+            System.out.println("That file exists.");
+        }
+        catch (FileNotFoundException e)
+        {
+            System.out.println("That file does not exist.");
+        }
+        return pathName;
+    }
 }
+
