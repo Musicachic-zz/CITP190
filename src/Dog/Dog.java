@@ -18,6 +18,8 @@
 package Dog;
 
 
+import java.util.Scanner;
+
 public class Dog
 {
     private String name;
@@ -39,7 +41,7 @@ public class Dog
 
 
 
-    public String getName()
+    public String getName(Scanner sc, String s)
     {
         return name;
     }
@@ -49,17 +51,17 @@ public class Dog
         this.name = name;
     }
 
-    public String getBreed()
+    public String getBreed(Scanner sc, String s)
     {
         return breed;
     }
 
-    public void setBreed(String breed)
+    public void setBreed(Scanner sc, String breed)
     {
         this.breed = breed;
     }
 
-    public String getColor()
+    public String getColor(Scanner sc, String s)
     {
         return color;
     }
@@ -69,7 +71,7 @@ public class Dog
         this.color = color;
     }
 
-    public double getWeight()
+    public double getWeight(Scanner sc, double v)
     {
         return weight;
     }
@@ -79,28 +81,32 @@ public class Dog
         this.weight = weight;
     }
 
-    public double getHeight()
+    public double getHeight(Scanner sc, double v)
     {
         return height;
     }
 
-    public void setHeight(double height)
+    public void setHeight(Scanner sc, double height)
     {
         this.height = height;
     }
 
-    public double getLength()
+    public double getLength(Scanner sc, double v)
     {
         return length;
     }
 
-    public void setLength(double length)
+    public void setLength(Scanner sc, double length)
     {
         this.length = length;
     }
 
-    public void bark(String name)
+    public void Bark()
     {
-       System.out.print(getName() + "Woof!");
+        System.out.println(name + " says Woof!");
+
     }
+
+
+
 }
