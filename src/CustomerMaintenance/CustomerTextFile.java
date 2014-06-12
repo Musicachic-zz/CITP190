@@ -9,7 +9,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-public abstract class CustomerTextFile implements CustomerDAO
+public class CustomerTextFile implements CustomerDAO
 {
     private ArrayList<Customer> customers = null;
     private Path customersPath = null;
@@ -50,5 +50,35 @@ public abstract class CustomerTextFile implements CustomerDAO
             }
         }
         return customers;
+    }
+
+    @Override
+    public Customer getCustomer(String emailAddress)
+    {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public ArrayList<Customer> getCustomers()
+    {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public boolean addCustomer(Customer c)
+    {
+        return false;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public boolean updateCustomer(Customer c)
+    {
+        return false;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public boolean deleteCustomer(Customer c)
+    {
+        return false;  //To change body of implemented methods use File | Settings | File Templates.
     }
 }
