@@ -18,7 +18,7 @@ public class Assignment3Code
 		squareTable();
 		System.out.println();
 		System.out.println();
-		multiplicationSquare();
+		multiplicationSquareTable();
 
 	}
 
@@ -53,7 +53,7 @@ public class Assignment3Code
 		}
 	}
 
-	public static void multiplicationSquare()
+	public static void multiplicationSquareTable()
 	{
 		int x;
 		System.out.println("\n");
