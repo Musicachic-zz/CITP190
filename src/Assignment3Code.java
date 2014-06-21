@@ -25,7 +25,6 @@ public class Assignment3Code
 	public static void multiplicationTable()
 	{
 		int x;
-		System.out.println("\n");
 		int y;
 		for (x = 1; x < 11; x++)
 		{
@@ -49,14 +48,13 @@ public class Assignment3Code
 
 		for (x = 1; x < 11; x++)
 		{
-			System.out.print(x + "\t" + (x * x) + "\n");
+			System.out.print(x + "\t\t" + (x * x) + "\n");
 		}
 	}
 
 	public static void multiplicationSquareTable()
 	{
 		int x;
-		System.out.println("\n");
 		int y;
 		for (x = 1; x < 11; x++)
 		{
@@ -67,7 +65,7 @@ public class Assignment3Code
 			System.out.print("\n" + x);
 			for (y = 1; y < 11; y++)
 			{
-				int z = (int) (Math.pow(x,2)+ (Math.pow(y,2)));
+				int z = (int) (Math.pow(x, 2) + (Math.pow(y, 2)));
 				System.out.print("\t\t" + z);
 			}
 
